@@ -17,9 +17,9 @@ const groceries: Grocery[] = [
   },
   {
     id: 2,
-    name: 'Banana',
-    description: 'Skinny, yellow and sweet banana',
-    imgUrl: 'https://www.nicepng.com/png/detail/18-183649_banana-png-pic-banana-transparent-background.png'
+    name: 'Bananas',
+    description: 'Skinny, yellow and sweet bananas',
+    imgUrl: 'https://www.cppng.com/file/download/2020-06/3-2-banana-png-picture.png'
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ export class GroceryService {
 
   updateGrocery(grocery: Grocery) {
     const i = this.groceries.findIndex(g => g.id == grocery.id)
-    this.groceries[i] = {...grocery}
+    this.groceries[i] = { ...grocery }
     console.log(this.groceries)
   }
 
@@ -62,6 +62,9 @@ export class GroceryService {
   }
 
   getLastId() {
-    return this.groceries[this.groceries.length - 1].id + 1
+    if (this.groceries[this.groceries.length - 1] != null)
+      return this.groceries[this.groceries.length - 1].id + 1
+    else
+      return 1
   }
 }

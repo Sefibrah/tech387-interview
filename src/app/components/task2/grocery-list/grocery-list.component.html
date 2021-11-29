@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex justify-content-center mt-3">
     <div class="card me-3" style="width: 18rem" *ngFor="let g of (groceryService.groceries$ | async)">
-      <img [src]="g.imgUrl" class="card-img-top">
+      <img [src]="g.imgUrl" class="card-img-top p-3">
       <div class="card-body">
         <h5 class="card-title">{{g.name}}</h5>
         <p class="card-text">{{g.description}}</p>
