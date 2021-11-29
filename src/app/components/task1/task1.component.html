@@ -1,0 +1,13 @@
+<div class="col-md-5 mx-auto mt-3">
+  <h1 class="display-5">TASK 1</h1>
+  <label for="path">Path for object</label>
+  <input type="text" class="form-control mt-3" id="path" [(ngModel)]="path" placeholder="eg. property1.property2">
+  <label class="mt-3" for="object">Look of the object</label>
+  <input type="text" class="form-control mt-3" id="object" [(ngModel)]="objectString"
+    placeholder='eg. { "property1": { "property2": "Apple", "property3": "Orange" } }'>
+  <label class="text-muted mt-3">Or change the object properties value inside the code and submit (or submit an empty
+    form to use the default values from the question posed)</label>
+  <button type="submit" (click)="findPropertyValue()" class="btn btn-primary w-100 mt-3">Get property value</button>
+
+  <p class="mt-3">{{value | json}}</p>
+</div>

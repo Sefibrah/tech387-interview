@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-3">
+    <div class="card me-3" style="width: 18rem" *ngFor="let g of (groceryService.groceries$ | async)">
+      <img [src]="g.imgUrl" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{g.name}}</h5>
+        <p class="card-text">{{g.description}}</p>
+        <div class="d-flex">
+          <a class="btn btn-primary me-3" [routerLink]="['/task2','grocery-form', g.id]">Update</a>
+          <a class="btn btn-danger" (click)="groceryService.deleteGrocery(g.id)">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

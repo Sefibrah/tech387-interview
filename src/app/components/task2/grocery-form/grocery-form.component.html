@@ -1,0 +1,18 @@
+<div class="container">
+  <form class="col-md-4 mx-auto mt-5" #groceryForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1 class="display-6">{{isEdit ? 'Edit grocery' : 'Create grocery'}}</h1>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="grocery.name">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" rows="3" name="description" required [(ngModel)]="grocery.description"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label">Image url</label>
+      <input type="text" class="form-control" id="img" name="imgUrl" required [(ngModel)]="grocery.imgUrl">
+    </div>
+    <button class="btn btn-primary mt-3 w-100" type="submit">Submit</button>
+  </form>
+</div>
